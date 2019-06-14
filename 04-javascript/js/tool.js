@@ -1,9 +1,3 @@
-/*
-* @Author: TomChen
-* @Date:   2018-04-25 20:20:10
-* @Last Modified by:   TomChen
-* @Last Modified time: 2018-04-26 15:58:54
-*/
 function animation(obj,opation,isLinear,fnEnd){
     //1.一开始关闭定时器是为了防止重复触发函数时有多个定时器工作加快动画执行
     //2.定时器做为对象的参数是为了多个物体动画时不相互干扰	

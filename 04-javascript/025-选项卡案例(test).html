@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+			display: none;
+		}
+		.active{
+			background-color: red;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBtn = document.getElementsByTagName('input');
+			var oDiv = document.getElementsByTagName('div');
+			//console.log(oBtn);
+			//console.log(oDiv);
+			for(var i=0; i<oBtn.length; i++){ //循环input 选项框
+				oBtn[i].index = i;
+				oBtn[i].onclick = function(){
+					for(var i=0; i<oBtn.length; i++){
+						oBtn[i].className = ''; //清除所有的classname
+						oDiv[i].style.display = 'none';
+					}
+					this.className = 'active';
+					//console.log(i);
+					oDiv[this.index].style.display = 'block';
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="选项1" id="btn1" class="active">
+	<input type="button" value="选项2" id="btn2">
+	<input type="button" value="选项3" id="btn3">
+	<input type="button" value="选项4" id="btn4">
+	<div style="display: block;">内容1</div>
+	<div>内容2</div>
+	<div>内容3</div>
+	<div>内容4</div>
+</body>
+</html>
