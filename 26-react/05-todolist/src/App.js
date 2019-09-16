@@ -1,16 +1,16 @@
-/*
-* @Author: TomChen
-* @Date:   2018-08-16 17:14:09
-* @Last Modified by:   TomChen
-* @Last Modified time: 2018-08-17 17:02:00
-*/
 import React,{ Component } from 'react';
-
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import Item from './Item';
-
+import { DatePicker } from 'antd';
 //引入css
 import './App.css';
+import locale from 'antd/es/date-picker/locale/zh_CN';
 
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
+
+// React.createElement('div', {className: 'shopping-list'},
+// React.createElement('h1', /* ... h1 children ... */),
+// React.createElement('ul', /* ... ul children ... */));
 //定义组件
 //必须继承React.Component
 class App extends Component{
@@ -102,10 +102,12 @@ class App extends Component{
 					)
 				})
 	}
+	
 	//必须有一个render方法
 	//JSX语法
 	render(){
 		//return 只能返回一个
+		
 		return(
 			<div className="App">
 				<input value={this.state.value} onChange={this.handleChange} />
@@ -115,6 +117,7 @@ class App extends Component{
 						this.getItems()
 					}
 				</ul>
+				<RangePicker onChange={this.onChange} locale={locale}/>
 			</div>				
 		)
 	}
