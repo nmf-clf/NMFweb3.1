@@ -9,12 +9,6 @@
 	padding: 0;
 }
 .App{
-	width: 400px;
+	width: 800px;
 	margin: 50px auto;
-}
-.App li{
-	list-style: none;
-	width: 100%;
-	border-bottom: 1px dashed gray;
-	margin-top: 10px;
 }

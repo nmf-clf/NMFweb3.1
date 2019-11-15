@@ -6,14 +6,18 @@
 */
 import React,{ Component } from 'react';
 
-
+import './item.css';
 class Item extends Component{
 	
 	constructor(props){
 		super(props);
 		this.handleDelete = this.handleDelete.bind(this)
 	}
-	
+
+	componentDidMount(){
+		console.log('this3::',this)
+	}
+
 	handleDelete(){
 		const { handleDelete,index } = this.props;
 		handleDelete(index);
@@ -22,7 +26,8 @@ class Item extends Component{
 	render(){
 		const { content } = this.props;
 		return (
-			<li onClick={this.handleDelete}>
+			<li onClick={this.handleDelete} ref="myLi" className="selfItem"
+			>
 				{content}
 			</li>
 		)

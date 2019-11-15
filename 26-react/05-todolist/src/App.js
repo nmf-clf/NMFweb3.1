@@ -1,7 +1,11 @@
 import React,{ Component } from 'react';
+import { DatePicker,Pagination, Button } from 'antd';
+
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+
 import Item from './Item';
-import { DatePicker } from 'antd';
+import TableData from './table';
+import { dataSource,columns } from './data'
 //引入css
 import './App.css';
 import locale from 'antd/es/date-picker/locale/zh_CN';
@@ -13,6 +17,7 @@ const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 // React.createElement('ul', /* ... ul children ... */));
 //定义组件
 //必须继承React.Component
+
 class App extends Component{
 	
 	constructor(props){
@@ -26,7 +31,14 @@ class App extends Component{
 		this.handleAdd = this.handleAdd.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
 	}
-
+	componentDidMount(){
+		// 使用原生的 DOM API 获取焦点
+		//this.refs.myInput.focus();
+		
+	}
+	/* onClick(){
+		console.log('111')
+	} */
 	handleAdd(){
 		/*
 		this.setState({
@@ -60,9 +72,9 @@ class App extends Component{
 			value:e.target.value
 		})
 		*/
-		const value = e.target.value;
+		//const value = e.target.value;
 		this.setState((preState)=>({
-			value
+			value : this.myInput.value
 		}));
 	}
 	/*
@@ -102,6 +114,9 @@ class App extends Component{
 					)
 				})
 	}
+	 showTotal(total) {
+		return `Total ${total} items`;
+	  }
 	
 	//必须有一个render方法
 	//JSX语法
@@ -110,14 +125,20 @@ class App extends Component{
 		
 		return(
 			<div className="App">
-				<input value={this.state.value} onChange={this.handleChange} />
+				{/* <input value={this.state.value} onChange={this.handleChange} ref={(n)=>{
+					this.myInput = n
+				}}/>
 				<button onClick={this.handleAdd}>新增</button>
 				<ul>
 					{
 						this.getItems()
 					}
-				</ul>
-				<RangePicker onChange={this.onChange} locale={locale}/>
+				</ul> */}
+				<TableData 
+					dataSource={dataSource}
+					columns={columns}
+					total={this.state.total}
+				/>
 			</div>				
 		)
 	}
