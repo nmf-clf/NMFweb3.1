@@ -33,10 +33,10 @@ class TableData extends Component{
                     showQuickJumper 
                     style={{float:"right",marginTop:'20px'}}
                     size="small" 
-                    total={45}
+                    total={this.props.total}
                     showTotal={total => `共 ${total} 条`}
                     //current={} //当前页数
-                    defaultCurrent={1} //默认的当前页数
+                    //defaultCurrent={1} //默认的当前页数
                     defaultPageSize={10} //默认的每页条数
                     disabled={false} //是否禁用
                     //loading={true} //页面是否加载中 未生效

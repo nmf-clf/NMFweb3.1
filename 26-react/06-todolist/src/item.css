@@ -1,0 +1,10 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.selfItem{
+	list-style: none;
+	width: 100%;
+	border-bottom: 1px dashed gray;
+	margin-top: 10px;
+}

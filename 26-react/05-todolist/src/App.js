@@ -36,6 +36,9 @@ class App extends Component{
 		//this.refs.myInput.focus();
 		
 	}
+	getData(page,pageSize){
+		console.log('55555',page,pageSize)
+	}
 	/* onClick(){
 		console.log('111')
 	} */
@@ -138,6 +141,9 @@ class App extends Component{
 					dataSource={dataSource}
 					columns={columns}
 					total={this.state.total}
+					onChangePage={(page,pageSize)=>{
+						this.getData(page,pageSize)
+					}}
 				/>
 			</div>				
 		)

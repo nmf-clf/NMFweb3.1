@@ -22,10 +22,11 @@
     "url-loader": "^1.1.0",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "antd": "^3.25.1",
+    "axios": "^0.18.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   }

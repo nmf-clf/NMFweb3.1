@@ -8,45 +8,45 @@
 	<input type="button" id='btn'>
 </body>
 <script>
-	// var x;
-	// if(x>60||x<30) return;
-	// var n = 10;
-	// var x = Math.random()*(n+1)
-	// console.log(x)
-	var json = [
-	{"id":"1257","value":"0.39","time":"2018/9/3 10:40:30","name":"临东压力"},
-	{"id":"1258","value":"0.313","time":"2018/9/3 10:40:30","name":"临东水位"},
-	{"id":"1259","value":"0.382","time":"2018/9/3 10:40:30","name":"龙划压力"},
-	{"id":"1260","value":"0.176","time":"2018/9/3 10:40:30","name":"龙划水位"},
-	{"id":"1261","value":"0.36","time":"2018/9/3 10:40:30","name":"平乐压力"},
-	{"id":"1262","value":"0.27","time":"2018/9/3 10:40:30","name":"平乐水位"},
-	{"id":"1263","value":"0.266","time":"2018/9/3 10:40:30","name":"圆岭小区泵前"},
-	{"id":"1264","value":"0.36","time":"2018/9/3 10:40:30","name":"圆岭小区泵后"},
-
-	]
-	var allOverlay= [
-	{"name":"临东","leixing":"厂","coordinate":"110.344492,21.137511"},
-	{"name":"平乐","leixing":"厂","coordinate":"110.407909,21.245864"},
-	{"name":"圆岭小区","leixing":"小区","coordinate":"110.420287,21.232615"},
-	{"name":"海滨","leixing":"厂","coordinate":"110.420588,21.219622"},
-	{"name":"龙划","leixing":"厂","coordinate":"110.402404,21.181497"}
-	];
-	for(var i=0; i<=allOverlay.length; i++){
-		//console.log("1::",allOverlay[i].name)
-		//var t = allOverlay[i].name;
-		//console.log("2::",t)
-		for(var j=0; j<=json.length; j++){
-			console.log("4::",json[j].name)
-		}
-		//console.log("3::",x.Name.indexOf(t) != -1)
-		// var re = json.filter((x)=>{
-		// 	return x.Name.indexOf(t) != -1;
-		// })
+	if(true){
+		setTimeout(()=>{
+			console.log('aaa') //2, 'aaa'
+		})
 	}
-// var t = allOverlay[i].name;
-// var re = json.filter((x)=>{
-//     return x.Name.indexOf(t) != -1
-// });
+	console.log('bbb')   //1, 'bbb'
+	
+	var a = 1;
+	if(true){
+		setTimeout(()=>{
+			a = 2;
+			console.log('fff',a) //3,fff '2'
+		})
+		console.log("eee",a)  //1,eee '1'
+	}
+	console.log('ccc',a) //2,ccc '1'
 
+	var dataSource = 1;
+	if(true){
+		setTimeout(()=>{
+			dataSource = 2;
+			console.log('ggg',dataSource) //3, ggg '2'
+		})
+		console.log("fff",dataSource) //1, fff '1'
+	}
+	dos()
+	function dos(){
+		console.log('ddd',dataSource) //2, ddd '1'
+	}
+
+	/* 
+	bbb
+	eee 1
+	ccc 1
+	fff 1
+	ddd 1
+	aaa
+	fff 2
+	ggg 2 
+	*/
 </script>
 </html>

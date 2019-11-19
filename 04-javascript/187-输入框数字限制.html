@@ -11,6 +11,16 @@
     点击：<input type="button" value="" name="button" onclick="alertValue(this)" style="width: 100px;" >
 </body>
 <script>
+    console.log(100)
+    let sum = 0;
+    let arr =[];
+    for(let i = 0; i < 5; i++) {
+        sum ++;
+        arr.push(sum)
+    }
+    console.log(sum);
+    //如果sum没有执行完，下面的代码就不会执行了
+    console.log(200)
     function getValue(value2){
         console.log("value2::",value2)
         return value2;

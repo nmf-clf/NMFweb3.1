@@ -1,12 +1,6 @@
-/*
-* @Author: TomChen
-* @Date:   2018-08-17 15:14:29
-* @Last Modified by:   TomChen
-* @Last Modified time: 2018-08-18 15:49:08
-*/
 import React,{ Component } from 'react';
 import PropTypes from 'prop-types';
-
+import './item.css';
 class Item extends Component{
 	
 	constructor(props){
@@ -55,7 +49,7 @@ class Item extends Component{
 		console.log('Item render...')
 		const { content,test } = this.props;
 		return (
-			<li onClick={this.handleDelete}>
+			<li onClick={this.handleDelete} className="selfItem">
 				{content}
 			</li>
 		)
