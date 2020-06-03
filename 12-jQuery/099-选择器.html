@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-jQuery的使用.html</title>
+	<script src="js/jquery-1.12.4.js"></script>
+	<style>
+		.category{
+			width: 300px;
+			height: 100px;
+			border: 1px solid black;
+			margin-bottom: 10px;
+		}
+	</style>
+	<script>
+		function chys(){
+
+}
+			$(function(){
+				var stName = 1001;
+				var name = 'Tom';
+				$(".category").each(function(){
+					console.log('==',this)
+				})
+				$(".add").on('click',function(){
+					console.log(111111)
+					stName++
+					$(".add").before(
+						`<div class='category' name='xxxx${stName}'>\
+							<p class="table" name="project1${stName}">${stName}</p>\
+						</div>
+						<tr class="invoiceStatusName" id="invoiceStatus" >\
+							<td width="1%" class="text-right pad-right-0">已有发票3<input type="radio" id ="invoiceStatus1'+stName+'" name="invoiceStatus" data-validation="noEmptyReg" value="1"  onchange="chys(this,stName)"></td>\
+							<td width="1%" class="text-right pad-right-0">暂无发票3<input type="radio" id ="invoiceStatus2'+stName+'" name="invoiceStatus"  data-validation="noEmptyReg" value="0" onchange="chys(this,stName)" ></td>\
+							<td width="1%" class="text-right pad-right-0">其他3<input type="radio" id = "invoiceStatus3'+stName+'" name="invoiceStatus" data-validation="noEmptyReg" value="2" onchange="chys(this,stName)" ></td>\
+						</tr>\
+						`
+					);
+				})
+				$(".submit").on('click',function(index){
+					$(".category").each(function(){
+						console.log('????',this,$(this).attr(name))
+					})
+				})
+				
+				// getCateHtml(){
+				// 	let html = `<div class='category'></div>`;
+				// 	return html;
+				// }
+			});
+			
+	
+	
+	</script>
+</head>
+<body>
+	<tr class="invoiceStatusName" id="invoiceStatus" >
+		<td width="1%" class="text-right pad-right-0">已有发票3<input type="radio" id ="invoiceStatus1'+stName+'" name="invoiceStatus" data-validation="noEmptyReg" value=""  onchange="chys(this)"></td>
+		<td width="1%" class="text-right pad-right-0">暂无发票3<input type="radio" id ="invoiceStatus2'+stName+'" name="invoiceStatus"  data-validation="noEmptyReg" value="" onchange="chys(this)" ></td>
+		<td width="1%" class="text-right pad-right-0">其他3<input type="radio" id = "invoiceStatus3'+stName+'" name="invoiceStatus" data-validation="noEmptyReg" value="" onchange="chys(this)" ></td>
+	</tr>
+	<br>
+	<tr class="invoiceStatusName2" id="invoiceStatus2" >
+		<td width="1%" class="text-right pad-right-0">已有发票3<input type="radio" id ="invoiceStatus1'+stName+'" name="invoiceStatus" data-validation="noEmptyReg" value=""  onchange="chys(this)"></td>
+		<td width="1%" class="text-right pad-right-0">暂无发票3<input type="radio" id ="invoiceStatus2'+stName+'" name="invoiceStatus"  data-validation="noEmptyReg" value="" onchange="chys(this)" ></td>
+		<td width="1%" class="text-right pad-right-0">其他3<input type="radio" id = "invoiceStatus3'+stName+'" name="invoiceStatus" data-validation="noEmptyReg" value="2" onchange="chys(this)" ></td>
+	</tr>
+	<button class="add">点击添加Div</button>
+	<button class="submit">提交</button>
+</body>
+</html>
