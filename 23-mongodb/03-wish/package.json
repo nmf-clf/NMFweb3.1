@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^3.1.1",
+    "mongodb": "^3.1.13",
     "swig": "^1.4.2",
     "uuid": "^3.3.2"
   }
